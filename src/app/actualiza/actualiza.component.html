@@ -1,0 +1,29 @@
+<div class="container">
+    <form class="form-group row">
+        <div class="form-group col-md-3">
+          <label for="nombre">Nombre:</label>
+          <input type="text" name="nombre" id="nombre" placeholder="Nombre" class="form-control" [(ngModel)]="cuadroNombre">
+        </div>
+        <br/>
+        <div class="form-group col-md-3">
+          <label for="apellido">Apellido:</label>
+          <input type="text" name="apellido" id="apellido" placeholder="Apellido" class="form-control" [(ngModel)]="cuadroApellido">
+        </div>
+        <br/>
+        <div class="form-group col-md-3">
+          <label for="cargo">Cargo:</label>
+          <input type="text" name="cargo" id="cargo" placeholder="Cargo" class="form-control" [(ngModel)]="cuadroCargo">
+        </div>
+        <br/>
+        <div class="form-group col-md-3">
+          <label for="salario">Salario:</label>
+          <input type="text" name="salario" id="salario" placeholder="Salario" class="form-control" [(ngModel)]="cuadroSalario">
+        </div>
+        <br/>
+        <div class="col mt-3">
+          <button class="btn btn-primary" (click)="actualizaEmpleado()" *ngIf="accion==1">Actualizar</button>
+          <button class="btn btn-danger mx-2" (click)="eliminaEmpleado()" *ngIf="accion==2">Eliminar</button>
+        </div>
+    </form>
+    <button class="btn btn-warning mt-5" (click)="volver()">Regresar</button>
+</div>

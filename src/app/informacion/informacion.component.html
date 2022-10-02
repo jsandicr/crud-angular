@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="row">
+      <div class="col">
+        <div>
+          {{i+1}}: {{empleado.nombre}} {{empleado.apellido}} {{empleado.cargo}} {{empleado.salario}}
+          <a class="btn btn-primary" [routerLink]="['/actualiza',i]" [queryParams]="{accion:'1'}">
+            Actualiza
+          </a>
+          <a class="btn btn-danger mx-2" [routerLink]="['/actualiza',i]" [queryParams]="{accion:'2'}">
+            Elimina
+          </a>
+        </div>
+      </div>
+    </div>
+    <app-detalle-empleado (detallesEmpleados)="addDetalle($event)"></app-detalle-empleado>
+    <ul style="list-style:none;">
+      <li *ngFor="let detalle of detalles">
+        {{detalle}}
+      </li>
+    </ul>
+</div>
